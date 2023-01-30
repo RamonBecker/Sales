@@ -6,4 +6,15 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Commom\" />
+    <Folder Include="Maps\" />
+    <Folder Include="Repositories\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Sales.Interface\Sales.Interface.csproj" />
+    <ProjectReference Include="..\Sales\Sales.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
