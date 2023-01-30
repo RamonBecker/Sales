@@ -4,10 +4,10 @@ namespace Sales.API.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class OrderController : ControllerBase
+    public class OrderController : AppBaseController
     {
-    
-        public OrderController() { 
+        public OrderController(IServiceProvider serviceProvider): base(serviceProvider)
+        {
         }
 
     }

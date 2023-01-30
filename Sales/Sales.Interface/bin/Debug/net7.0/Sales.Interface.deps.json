@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "Sales.Interface/1.0.0": {
+        "dependencies": {
+          "Sales.Domain": "1.0.0"
+        },
+        "runtime": {
+          "Sales.Interface.dll": {}
+        }
+      },
+      "Sales.Domain/1.0.0": {
+        "runtime": {
+          "Sales.Domain.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Sales.Interface/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Sales.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

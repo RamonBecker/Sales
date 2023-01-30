@@ -1,0 +1,5 @@
+C:\Users\ramon\Documents\GitHub\AppSales\Sales\Sales\obj\Debug\net5.0\Sales.Domain.csproj.AssemblyReference.cache
+C:\Users\ramon\Documents\GitHub\AppSales\Sales\Sales\obj\Debug\net5.0\Sales.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ramon\Documents\GitHub\AppSales\Sales\Sales\obj\Debug\net5.0\Sales.Domain.AssemblyInfoInputs.cache
+C:\Users\ramon\Documents\GitHub\AppSales\Sales\Sales\obj\Debug\net5.0\Sales.Domain.AssemblyInfo.cs
+C:\Users\ramon\Documents\GitHub\AppSales\Sales\Sales\obj\Debug\net5.0\Sales.Domain.csproj.CoreCompileInputs.cache

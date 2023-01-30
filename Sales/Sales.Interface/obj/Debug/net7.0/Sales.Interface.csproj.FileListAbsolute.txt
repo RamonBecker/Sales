@@ -1,0 +1,15 @@
+C:\Users\ramon\Documents\GitHub\AppSales\Sales\Sales.Interface\bin\Debug\net7.0\Sales.Interface.deps.json
+C:\Users\ramon\Documents\GitHub\AppSales\Sales\Sales.Interface\bin\Debug\net7.0\Sales.Interface.dll
+C:\Users\ramon\Documents\GitHub\AppSales\Sales\Sales.Interface\bin\Debug\net7.0\Sales.Interface.pdb
+C:\Users\ramon\Documents\GitHub\AppSales\Sales\Sales.Interface\bin\Debug\net7.0\Sales.Domain.dll
+C:\Users\ramon\Documents\GitHub\AppSales\Sales\Sales.Interface\bin\Debug\net7.0\Sales.Domain.pdb
+C:\Users\ramon\Documents\GitHub\AppSales\Sales\Sales.Interface\obj\Debug\net7.0\Sales.Interface.csproj.AssemblyReference.cache
+C:\Users\ramon\Documents\GitHub\AppSales\Sales\Sales.Interface\obj\Debug\net7.0\Sales.Interface.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ramon\Documents\GitHub\AppSales\Sales\Sales.Interface\obj\Debug\net7.0\Sales.Interface.AssemblyInfoInputs.cache
+C:\Users\ramon\Documents\GitHub\AppSales\Sales\Sales.Interface\obj\Debug\net7.0\Sales.Interface.AssemblyInfo.cs
+C:\Users\ramon\Documents\GitHub\AppSales\Sales\Sales.Interface\obj\Debug\net7.0\Sales.Interface.csproj.CoreCompileInputs.cache
+C:\Users\ramon\Documents\GitHub\AppSales\Sales\Sales.Interface\obj\Debug\net7.0\Sales.Interface.csproj.CopyComplete
+C:\Users\ramon\Documents\GitHub\AppSales\Sales\Sales.Interface\obj\Debug\net7.0\Sales.Interface.dll
+C:\Users\ramon\Documents\GitHub\AppSales\Sales\Sales.Interface\obj\Debug\net7.0\refint\Sales.Interface.dll
+C:\Users\ramon\Documents\GitHub\AppSales\Sales\Sales.Interface\obj\Debug\net7.0\Sales.Interface.pdb
+C:\Users\ramon\Documents\GitHub\AppSales\Sales\Sales.Interface\obj\Debug\net7.0\ref\Sales.Interface.dll
