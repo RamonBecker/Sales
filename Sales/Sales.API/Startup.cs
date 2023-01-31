@@ -1,12 +1,20 @@
-﻿namespace Sales.API
+﻿using Sales.Repository;
+using Microsoft.EntityFrameworkCore;
+using Npgsql;
+using System.Data.Common;
+
+namespace Sales.API
 {
     public class Startup
     {
+        public IConfiguration Configuration { get; }
+
+        // Setando a ConnectionString do banco
+        public DbConnection DbConnection => new NpgsqlConnection(Configuration.GetConnectionString("App"));
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
         }
-        public IConfiguration Configuration { get; }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
@@ -29,9 +37,16 @@
 
         public void ConfigureServices(IServiceCollection services)
         {
-            // services.AddScoped<Interface, ClasseConcontrea>();
 
-            DependencyInjection.Register(services);
+            //Assembly = indicando onde será carregado as informações
+            services.AddDbContext<ApplicationDBContext> (options =>
+            {
+
+                options.UseNpgsql(DbConnection, assembly => assembly.MigrationsAssembly(typeof(ApplicationDBContext).Assembly.FullName));
+            });
+
+                DependencyInjection.Register(services);
+            
             services.AddControllers();
         }
     }
