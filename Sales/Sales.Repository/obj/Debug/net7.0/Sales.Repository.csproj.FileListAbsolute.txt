@@ -15,3 +15,5 @@ C:\Users\ramon\Documents\GitHub\AppSales\Sales\Sales.Repository\obj\Debug\net7.0
 C:\Users\ramon\Documents\GitHub\AppSales\Sales\Sales.Repository\obj\Debug\net7.0\refint\Sales.Repository.dll
 C:\Users\ramon\Documents\GitHub\AppSales\Sales\Sales.Repository\obj\Debug\net7.0\Sales.Repository.pdb
 C:\Users\ramon\Documents\GitHub\AppSales\Sales\Sales.Repository\obj\Debug\net7.0\ref\Sales.Repository.dll
+C:\Users\ramon\Documents\GitHub\AppSales\Sales\Sales.Repository\bin\Debug\net7.0\Sales.Repository.runtimeconfig.json
+C:\Users\ramon\Documents\GitHub\AppSales\Sales\Sales.Repository\obj\Debug\net7.0\Sales.Repository.genruntimeconfig.cache

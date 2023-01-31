@@ -24,3 +24,12 @@ C:\Users\ramon\Documents\GitHub\AppSales\Sales\Sales.API\obj\Debug\net7.0\refint
 C:\Users\ramon\Documents\GitHub\AppSales\Sales\Sales.API\obj\Debug\net7.0\Sales.API.pdb
 C:\Users\ramon\Documents\GitHub\AppSales\Sales\Sales.API\obj\Debug\net7.0\Sales.API.genruntimeconfig.cache
 C:\Users\ramon\Documents\GitHub\AppSales\Sales\Sales.API\obj\Debug\net7.0\ref\Sales.API.dll
+C:\Users\ramon\Documents\GitHub\AppSales\Sales\Sales.API\bin\Debug\net7.0\Humanizer.dll
+C:\Users\ramon\Documents\GitHub\AppSales\Sales\Sales.API\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\ramon\Documents\GitHub\AppSales\Sales\Sales.API\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\ramon\Documents\GitHub\AppSales\Sales\Sales.API\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\ramon\Documents\GitHub\AppSales\Sales\Sales.API\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\ramon\Documents\GitHub\AppSales\Sales\Sales.API\bin\Debug\net7.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\ramon\Documents\GitHub\AppSales\Sales\Sales.API\bin\Debug\net7.0\Mono.TextTemplating.dll
+C:\Users\ramon\Documents\GitHub\AppSales\Sales\Sales.API\bin\Debug\net7.0\System.CodeDom.dll
+C:\Users\ramon\Documents\GitHub\AppSales\Sales\Sales.API\obj\Debug\net7.0\Sales.API.csproj.CopyComplete
