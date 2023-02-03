@@ -17,6 +17,9 @@ namespace Sales.Repository
             builder.Property(x => x.Nome).HasColumnName("nome").HasMaxLength(100).IsRequired();
             builder.Property(x => x.Cpf).HasColumnName("cpf").HasMaxLength(11).IsRequired();
             builder.Property(x => x.Ativo).HasColumnName("ativo").IsRequired();
+
+            builder.Property(x => x.IdEndereco).HasColumnName("id_endereco").IsRequired();
+
         }
     }
 }

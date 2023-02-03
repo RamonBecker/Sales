@@ -15,5 +15,6 @@ namespace Sales.Domain.Entities
         public bool Ativo { get; set; } 
         public int IdCidade { get; set; }
         public virtual Cidade cidade { get; set; }
+        public virtual Cliente Cliente { get; set; }
     }
 }
