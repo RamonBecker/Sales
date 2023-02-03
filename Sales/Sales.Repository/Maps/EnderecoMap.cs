@@ -23,6 +23,9 @@ namespace Sales.Repository
 
             builder.HasOne(x => x.Cliente).WithOne(x => x.Endereco).HasForeignKey<Cliente>(x => x.IdEndereco);
 
+            builder.Property(x => x.IdCidade).HasColumnName("id_cidade").IsRequired();
+            builder.HasOne(x => x.Cidade).WithMany().HasForeignKey(x => x.IdCidade);
+
 
         }
     }
