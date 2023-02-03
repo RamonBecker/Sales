@@ -33,3 +33,11 @@ C:\Users\ramon\Documents\GitHub\AppSales\Sales\Sales.API\bin\Debug\net7.0\Micros
 C:\Users\ramon\Documents\GitHub\AppSales\Sales\Sales.API\bin\Debug\net7.0\Mono.TextTemplating.dll
 C:\Users\ramon\Documents\GitHub\AppSales\Sales\Sales.API\bin\Debug\net7.0\System.CodeDom.dll
 C:\Users\ramon\Documents\GitHub\AppSales\Sales\Sales.API\obj\Debug\net7.0\Sales.API.csproj.CopyComplete
+C:\Users\ramon\Documents\GitHub\AppSales\Sales\Sales.API\bin\Debug\net7.0\Npgsql.dll
+C:\Users\ramon\Documents\GitHub\AppSales\Sales\Sales.API\bin\Debug\net7.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+C:\Users\ramon\Documents\GitHub\AppSales\Sales\Sales.API\bin\Debug\net7.0\Sales.Domain.dll
+C:\Users\ramon\Documents\GitHub\AppSales\Sales\Sales.API\bin\Debug\net7.0\Sales.Interface.dll
+C:\Users\ramon\Documents\GitHub\AppSales\Sales\Sales.API\bin\Debug\net7.0\Sales.Repository.dll
+C:\Users\ramon\Documents\GitHub\AppSales\Sales\Sales.API\bin\Debug\net7.0\Sales.Interface.pdb
+C:\Users\ramon\Documents\GitHub\AppSales\Sales\Sales.API\bin\Debug\net7.0\Sales.Repository.pdb
+C:\Users\ramon\Documents\GitHub\AppSales\Sales\Sales.API\bin\Debug\net7.0\Sales.Domain.pdb

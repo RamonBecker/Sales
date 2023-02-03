@@ -11,6 +11,13 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Npgsql" Version="7.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Sales.Interface\Sales.Interface.csproj" />
+    <ProjectReference Include="..\Sales.Repository\Sales.Repository.csproj" />
+    <ProjectReference Include="..\Sales\Sales.Domain.csproj" />
   </ItemGroup>
 
 </Project>
