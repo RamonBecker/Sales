@@ -8,7 +8,7 @@ namespace Sales.Repository
     public class ClienteMap : BaseDomainMap<Cliente>
     {
 
-        ClienteMap() : base("tb_cliente") { }
+       public ClienteMap() : base("tb_cliente") { }
 
         public override void Configure(EntityTypeBuilder<Cliente> builder)
         {
