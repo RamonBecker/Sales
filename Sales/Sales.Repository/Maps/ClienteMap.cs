@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Sales.Domain.Entities;
 
 
-namespace Sales.Repository.Maps
+namespace Sales.Repository
 {
     public class ClienteMap : BaseDomainMap<Cliente>
     {
@@ -14,6 +14,9 @@ namespace Sales.Repository.Maps
         {
             base.Configure(builder);
 
+            builder.Property(x => x.Nome).HasColumnName("nome").HasMaxLength(100).IsRequired();
+            builder.Property(x => x.Cpf).HasColumnName("cpf").HasMaxLength(11).IsRequired();
+            builder.Property(x => x.Ativo).HasColumnName("ativo").IsRequired();
         }
     }
 }

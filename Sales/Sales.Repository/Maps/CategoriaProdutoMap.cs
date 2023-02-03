@@ -5,17 +5,16 @@ using Sales.Domain.Entities;
 
 namespace Sales.Repository
 {
-    public class CidadeMap : BaseDomainMap<Cidade>
+    public class CategoriaProdutoMap : BaseDomainMap<CategoriaProduto>
     {
 
-        CidadeMap() : base("tb_cidade") { }
+        CategoriaProdutoMap() : base("tb_categoria_produto") { }
 
-        public override void Configure(EntityTypeBuilder<Cidade> builder)
+        public override void Configure(EntityTypeBuilder<CategoriaProduto> builder)
         {
             base.Configure(builder);
 
             builder.Property(x => x.Nome).HasColumnName("nome").HasMaxLength(100).IsRequired();
-            builder.Property(x => x.Uf).HasColumnName("uf").HasMaxLength(2).IsRequired();
             builder.Property(x => x.Ativo).HasColumnName("ativo").IsRequired();
         }
     }

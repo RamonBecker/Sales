@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Sales.Domain.Entities;
 
 
-namespace Sales.Repository.Maps
+namespace Sales.Repository
 {
     public class ImagemMap : BaseDomainMap<Imagem>
     {
@@ -14,6 +14,9 @@ namespace Sales.Repository.Maps
         {
             base.Configure(builder);
 
+            builder.Property(x => x.Nome).HasColumnName("nome").HasMaxLength(20).IsRequired();
+            builder.Property(x => x.NomeArquivo).HasColumnName("nome_arquivo").HasMaxLength(20).IsRequired();
+            builder.Property(x => x.Principal).HasColumnName("principal").IsRequired();
         }
     }
 }

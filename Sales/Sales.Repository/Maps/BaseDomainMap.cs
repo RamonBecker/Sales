@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Sales.Domain.Entities;
 
-namespace Sales.Repository.Maps
+namespace Sales.Repository
 {
     public class BaseDomainMap<TDomain> : IEntityTypeConfiguration<TDomain> where TDomain : BaseDomain
     {
@@ -18,6 +18,11 @@ namespace Sales.Repository.Maps
             {
                 builder.ToTable(_tableName);
             }
+
+            builder.HasKey(x => x.Id);
+            // Definindo que a coluna id é gerado automaticamente
+            builder.Property(x => x.Id).HasColumnName("id").ValueGeneratedOnAdd();    
+            builder.Property(x => x.CriadoEm).HasColumnName("criado_em").IsRequired();    
         }
     }
 }
