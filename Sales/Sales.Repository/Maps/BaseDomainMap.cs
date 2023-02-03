@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Sales.Domain.Entities;
+using Sales.Domain;
 
 namespace Sales.Repository
 {

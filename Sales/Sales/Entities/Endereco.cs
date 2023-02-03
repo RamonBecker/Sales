@@ -1,8 +1,6 @@
-﻿using Sales.Domain.Interfaces;
-using Sales.Domain.Enums;
+﻿
 
-
-namespace Sales.Domain.Entities
+namespace Sales.Domain
 {
     public class Endereco: BaseDomain, IExibivel
     {

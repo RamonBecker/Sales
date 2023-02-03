@@ -1,8 +1,6 @@
 ﻿
 
-using Sales.Domain.Interfaces;
-
-namespace Sales.Domain.Entities
+namespace Sales.Domain
 {
     public class PromocaoProduto : BaseDomain, IExibivel
     {

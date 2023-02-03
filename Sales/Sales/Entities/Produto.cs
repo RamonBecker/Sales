@@ -1,7 +1,6 @@
-﻿using Sales.Domain.Interfaces;
+﻿
 
-
-namespace Sales.Domain.Entities
+namespace Sales.Domain
 {
     public class Produto: BaseDomain, IExibivel
     {
@@ -13,6 +12,7 @@ namespace Sales.Domain.Entities
         public virtual CategoriaProduto Categoria { get; set; }
         public virtual List<Imagem> Imagens { get; set; }
 
+        public virtual List<Combo> Combos { get; set; }
         public virtual List<PromocaoProduto> Promocoes{ get; set; }
         public bool Ativo { get; set; }   
     }

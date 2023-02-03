@@ -1,5 +1,5 @@
 ﻿
-namespace Sales.Domain.Entities
+namespace Sales.Domain
 {
     public abstract class BaseDomain
     {

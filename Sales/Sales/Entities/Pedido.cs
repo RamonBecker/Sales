@@ -1,5 +1,5 @@
 ﻿
-namespace Sales.Domain.Entities
+namespace Sales.Domain
 {
     public class Pedido : BaseDomain
     {

@@ -1,6 +1,6 @@
 ﻿
 
-namespace Sales.Domain.Interfaces
+namespace Sales.Domain
 {
     public interface IExibivel
     {

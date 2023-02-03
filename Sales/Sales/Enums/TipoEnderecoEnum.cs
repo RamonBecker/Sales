@@ -1,5 +1,5 @@
 ﻿
-namespace Sales.Domain.Enums
+namespace Sales.Domain
 {
     public enum TipoEnderecoEnum: byte
     {
