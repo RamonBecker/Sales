@@ -1,4 +1,7 @@
-﻿namespace Sales.API
+﻿using Sales.Interface;
+using Sales.Repository;
+
+namespace Sales.API
 {
     public class DependencyInjection
     {
@@ -8,8 +11,10 @@
             RepositoryDependency(serviceProvider);
         }
 
-        private static void RepositoryDependency(IServiceCollection services)
+        private static void RepositoryDependency(IServiceCollection serviceProvider)
         {
+
+            serviceProvider.AddScoped<IProdutoRepository, ProdutoRepository>();
         }
     }
 }

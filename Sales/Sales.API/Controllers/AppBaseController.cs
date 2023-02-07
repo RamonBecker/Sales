@@ -1,13 +1,16 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.DependencyInjection;
+using System;
 
-namespace Sales.API.Controllers
+namespace Sales.API
 {
     public class AppBaseController : ControllerBase
     {
-        protected readonly IServiceProvider _serviceProvider;
+        protected readonly IServiceProvider ServiceProvider;
+        //protected IServiceProvider ServiceProvider { get; }
         public AppBaseController(IServiceProvider serviceProvider)
         {
-            _serviceProvider = serviceProvider;
+            ServiceProvider = serviceProvider;
         }
 
     }
