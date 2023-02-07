@@ -29,5 +29,13 @@ namespace Sales.API
 
         //    throw new NotImplementedException();
          }
+
+        [HttpGet]
+        [Route("search/{text}")]
+        public IEnumerable<Produto>  GetSearch(string text)
+        {
+            var repo = ServiceProvider.GetService(typeof(IProdutoRepository));
+            return ((IProdutoRepository)repo).Search(text);
+        }
     }
 }
