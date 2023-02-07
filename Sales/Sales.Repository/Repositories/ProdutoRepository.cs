@@ -7,7 +7,7 @@ namespace Sales.Repository
 {
     public class ProdutoRepository : BaseRepository, IProdutoRepository
     {
-        private readonly ApplicationDBContext _dBContext;
+       // private readonly ApplicationDBContext _dBContext;
         public ProdutoRepository(ApplicationDBContext dBContext): base(dBContext)
         {
         }
