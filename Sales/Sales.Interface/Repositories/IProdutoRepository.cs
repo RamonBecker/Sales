@@ -9,5 +9,7 @@ namespace Sales.Interface
 
         List<Produto> Search(string text);
 
+        Produto Detail(int id);
+
     }
 }

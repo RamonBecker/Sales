@@ -1,7 +1,9 @@
 ﻿
 
+using Microsoft.EntityFrameworkCore;
 using Sales.Domain;
 using Sales.Interface;
+using System.Security.Cryptography.X509Certificates;
 
 namespace Sales.Repository
 {
@@ -12,18 +14,29 @@ namespace Sales.Repository
         }
         public List<Produto> Get()
         {
-          return _dBContext.Produtos.
-                Where(x => x.Ativo).
-                OrderBy( x => x.Nome).
-                ToList();
+          return _dBContext.Produtos
+                .Include(x => x.Categoria)
+                .Where(x => x.Ativo)
+                .OrderBy( x => x.Nome)
+                .ToList();
         
         }
         public List<Produto> Search(string text)
         {
             return _dBContext.Produtos
+                .Include(x => x.Categoria)
                 .Where(x => x.Ativo 
                         && (x.Nome.ToUpper().Contains(text.ToUpper())
                        || x.Descricao.ToUpper().Contains(text.ToUpper()))).OrderBy( x => x.Nome).ToList();
+        }
+
+        public Produto Detail(int id)
+        {
+            return _dBContext.Produtos
+                .Include(x => x.Imagens)
+                .Include(x => x.Categoria)
+                .Where(x => x.Ativo && x.Id == id).FirstOrDefault();
+                ;
         }
     }
 }

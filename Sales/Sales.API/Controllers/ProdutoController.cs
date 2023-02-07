@@ -19,10 +19,9 @@ namespace Sales.API
         public IEnumerable<Produto> Get()
         {
 
-            var repo = ServiceProvider.GetService(typeof(IProdutoRepository));
+            var repo = (IProdutoRepository)ServiceProvider.GetService(typeof(IProdutoRepository));
 
-
-            return ((IProdutoRepository)repo).Get();
+            return repo.Get();
 
             //return  repo.Get();
         
@@ -34,8 +33,22 @@ namespace Sales.API
         [Route("search/{text}")]
         public IEnumerable<Produto>  GetSearch(string text)
         {
-            var repo = ServiceProvider.GetService(typeof(IProdutoRepository));
-            return ((IProdutoRepository)repo).Search(text);
+            var repo = (IProdutoRepository) ServiceProvider.GetService(typeof(IProdutoRepository));
+            return repo.Search(text);
+        }
+
+        [HttpGet]
+        [Route("{id}")]
+        public dynamic Detail(int? id)
+        {
+
+            if ((id ?? 0) > 0)
+            {
+                var repo = (IProdutoRepository)ServiceProvider.GetService(typeof(IProdutoRepository));
+                return repo.Detail(id.Value);
+            }
+
+            return null;
         }
     }
 }

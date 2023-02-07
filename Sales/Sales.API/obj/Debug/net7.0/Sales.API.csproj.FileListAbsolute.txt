@@ -41,3 +41,9 @@ C:\Users\ramon\Documents\GitHub\AppSales\Sales\Sales.API\bin\Debug\net7.0\Sales.
 C:\Users\ramon\Documents\GitHub\AppSales\Sales\Sales.API\bin\Debug\net7.0\Sales.Interface.pdb
 C:\Users\ramon\Documents\GitHub\AppSales\Sales\Sales.API\bin\Debug\net7.0\Sales.Repository.pdb
 C:\Users\ramon\Documents\GitHub\AppSales\Sales\Sales.API\bin\Debug\net7.0\Sales.Domain.pdb
+C:\Users\ramon\Documents\GitHub\AppSales\Sales\Sales.API\bin\Debug\net7.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\ramon\Documents\GitHub\AppSales\Sales\Sales.API\bin\Debug\net7.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\ramon\Documents\GitHub\AppSales\Sales\Sales.API\bin\Debug\net7.0\Newtonsoft.Json.dll
+C:\Users\ramon\Documents\GitHub\AppSales\Sales\Sales.API\bin\Debug\net7.0\Newtonsoft.Json.Bson.dll
+C:\Users\ramon\Documents\GitHub\AppSales\Sales\Sales.API\obj\Debug\net7.0\Sales.API.Properties.Resources.resources
+C:\Users\ramon\Documents\GitHub\AppSales\Sales\Sales.API\obj\Debug\net7.0\Sales.API.csproj.GenerateResource.cache

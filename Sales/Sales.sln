@@ -5,11 +5,11 @@ VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sales.Domain", "Sales\Sales.Domain.csproj", "{2FFA2A49-ECC4-45BB-ABE0-DEB2340D2AF2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sales.Interface", "Sales.Interface\Sales.Interface.csproj", "{3AA5CE17-88C8-45CC-BA5B-176FF061B471}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sales.Interface", "Sales.Interface\Sales.Interface.csproj", "{3AA5CE17-88C8-45CC-BA5B-176FF061B471}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sales.Repository", "Sales.Repository\Sales.Repository.csproj", "{1FCAF589-0336-44E8-988C-27B5EE6A2F7F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sales.Repository", "Sales.Repository\Sales.Repository.csproj", "{1FCAF589-0336-44E8-988C-27B5EE6A2F7F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sales.API", "Sales.API\Sales.API.csproj", "{975DC588-AD72-4C39-8795-41540737ECFF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sales.API", "Sales.API\Sales.API.csproj", "{975DC588-AD72-4C39-8795-41540737ECFF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
