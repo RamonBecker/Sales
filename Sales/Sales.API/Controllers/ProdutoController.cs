@@ -16,7 +16,7 @@ namespace Sales.API
         }
 
         [HttpGet]
-        public IEnumerable<Produto> Get()
+        public dynamic Get()
         {
 
             var repo = (IProdutoRepository)ServiceProvider.GetService(typeof(IProdutoRepository));
@@ -41,6 +41,20 @@ namespace Sales.API
             {
                 var repo = (IProdutoRepository)ServiceProvider.GetService(typeof(IProdutoRepository));
                 return repo.Detail(id.Value);
+            }
+
+            return null;
+        }
+
+        [HttpGet]
+        [Route("{id}/imagens")]
+        public dynamic Imagens(int? id)
+        {
+
+            if ((id ?? 0) > 0)
+            {
+                var repo = (IProdutoRepository)ServiceProvider.GetService(typeof(IProdutoRepository));
+                return repo.Imagens(id.Value);
             }
 
             return null;
