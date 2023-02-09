@@ -19,5 +19,13 @@ namespace Sales.API
             return repo.TicketMax();
         }
 
+        [HttpGet]
+        [Route("por-cliente")]
+        public dynamic PedidosClientes()
+        {
+            var repo = (IPedidoRepository)ServiceProvider.GetService(typeof(IPedidoRepository));
+            return repo.PedidosClientes();
+        }
+
     }
 }

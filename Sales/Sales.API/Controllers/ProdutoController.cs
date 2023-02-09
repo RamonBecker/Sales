@@ -16,20 +16,20 @@ namespace Sales.API
         }
 
         [HttpGet]
-        public dynamic Get()
+        public dynamic Get([FromQuery] string ordem="" )
         {
 
             var repo = (IProdutoRepository)ServiceProvider.GetService(typeof(IProdutoRepository));
 
-            return repo.Get();
+            return repo.Get(ordem);
          }
 
         [HttpGet]
         [Route("search/{text}/{pagina?}")]
-        public dynamic GetSearch(string text, int pagina = 1)
+        public dynamic GetSearch(string text, int pagina = 1, [FromQuery] string ordem = "")
         {
             var repo = (IProdutoRepository) ServiceProvider.GetService(typeof(IProdutoRepository));
-            return repo.Search(text, pagina);
+            return repo.Search(text, pagina, ordem);
         }
 
         [HttpGet]

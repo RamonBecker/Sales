@@ -5,9 +5,9 @@ namespace Sales.Interface
 {
     public interface IProdutoRepository
     {
-        dynamic Get();
+        dynamic Get(string ordem);
 
-        dynamic Search(string text, int pagina);
+        dynamic Search(string text, int pagina, string ordem);
 
         dynamic Detail(int id);
 
