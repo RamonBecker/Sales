@@ -22,19 +22,14 @@ namespace Sales.API
             var repo = (IProdutoRepository)ServiceProvider.GetService(typeof(IProdutoRepository));
 
             return repo.Get();
-
-            //return  repo.Get();
-        
-
-        //    throw new NotImplementedException();
          }
 
         [HttpGet]
-        [Route("search/{text}")]
-        public IEnumerable<Produto>  GetSearch(string text)
+        [Route("search/{text}/{pagina?}")]
+        public IEnumerable<Produto>  GetSearch(string text, int pagina = 1)
         {
             var repo = (IProdutoRepository) ServiceProvider.GetService(typeof(IProdutoRepository));
-            return repo.Search(text);
+            return repo.Search(text, pagina);
         }
 
         [HttpGet]

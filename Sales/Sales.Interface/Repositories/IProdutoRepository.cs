@@ -7,7 +7,7 @@ namespace Sales.Interface
     {
         List<Produto> Get();
 
-        List<Produto> Search(string text);
+        List<Produto> Search(string text, int pagina);
 
         Produto Detail(int id);
 
