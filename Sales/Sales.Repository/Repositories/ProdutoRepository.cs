@@ -14,16 +14,16 @@ namespace Sales.Repository
         }
         public List<Produto> Get()
         {
-          return _dBContext.Produtos
+          return DBContext.Produtos
                 .Include(x => x.Categoria)
                 .Where(x => x.Ativo)
                 .OrderBy( x => x.Nome)
                 .ToList();
         
         }
-        public List<Produto> Search(string text, int pagina)
+        public dynamic Search(string text, int pagina)
         {
-            return _dBContext.Produtos
+            var produtos = DBContext.Produtos
                 .Include(x => x.Categoria)
                 .Where(x => x.Ativo 
                         && (x.Nome.ToUpper().Contains(text.ToUpper())
@@ -31,11 +31,24 @@ namespace Sales.Repository
                 .Skip(TamanhoPagina * (pagina - 1))
                 .Take(TamanhoPagina)
                 .OrderBy( x => x.Nome).ToList();
+
+            var qtdProdutos = DBContext.Produtos.Where(x => x.Ativo
+                        && (x.Nome.ToUpper().Contains(text.ToUpper())
+                       || x.Descricao.ToUpper().Contains(text.ToUpper()))).Count();
+
+            var qtdPaginas = (qtdProdutos / TamanhoPagina);
+
+            if(qtdPaginas < 1)
+            {
+                qtdPaginas = 1;
+            }
+
+            return new { produtos, qtdPaginas};
         }
 
         public Produto Detail(int id)
         {
-            return _dBContext.Produtos
+            return DBContext.Produtos
                 .Include(x => x.Imagens)
                 .Include(x => x.Categoria)
                 .Where(x => x.Ativo && x.Id == id).FirstOrDefault();

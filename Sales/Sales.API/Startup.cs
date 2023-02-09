@@ -9,6 +9,8 @@ namespace Sales.API
     {
         public IConfiguration Configuration { get; }
 
+
+
         // Setando a ConnectionString do banco
         public DbConnection DbConnection => new NpgsqlConnection(Configuration.GetConnectionString("App"));
         public Startup(IConfiguration configuration)
@@ -33,12 +35,16 @@ namespace Sales.API
             {
                 endpoints.MapControllers();
             });
+
+            
         }
 
         public void ConfigureServices(IServiceCollection services)
         {
 
             //Assembly = indicando onde será carregado as informações
+            AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
+
             services.AddDbContext<ApplicationDBContext> (options =>
             {
 

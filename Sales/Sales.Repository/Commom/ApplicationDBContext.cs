@@ -13,6 +13,7 @@ namespace Sales.Repository
 
             // Chamada da carga de mapeamento no assembly
             modelBuilder.ApplyConfigurationsFromAssembly(GetType().Assembly);
+           
             // GetType = ApplicationDBContext 
         }
 
@@ -33,6 +34,8 @@ namespace Sales.Repository
         public ApplicationDBContext(DbContextOptions<ApplicationDBContext> options) : base(options)
         {
             ChangeTracker.AutoDetectChangesEnabled = false;
+            //AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
+
         }
     }
 }

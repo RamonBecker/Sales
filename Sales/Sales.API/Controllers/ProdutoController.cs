@@ -26,7 +26,7 @@ namespace Sales.API
 
         [HttpGet]
         [Route("search/{text}/{pagina?}")]
-        public IEnumerable<Produto>  GetSearch(string text, int pagina = 1)
+        public dynamic GetSearch(string text, int pagina = 1)
         {
             var repo = (IProdutoRepository) ServiceProvider.GetService(typeof(IProdutoRepository));
             return repo.Search(text, pagina);

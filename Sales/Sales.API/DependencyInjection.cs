@@ -15,6 +15,7 @@ namespace Sales.API
         {
 
             serviceProvider.AddScoped<IProdutoRepository, ProdutoRepository>();
+            serviceProvider.AddScoped<IPedidoRepository, PedidoRepository>();
         }
     }
 }

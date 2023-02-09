@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Sales.Interface;
 
 namespace Sales.API
 {
@@ -8,6 +9,14 @@ namespace Sales.API
     {
         public PedidoController(IServiceProvider serviceProvider): base(serviceProvider)
         {
+        }
+
+        [HttpGet]
+        [Route("ticket-max")]
+        public decimal TicketMax()
+        {
+            var repo = (IPedidoRepository)ServiceProvider.GetService(typeof(IPedidoRepository));
+            return repo.TicketMax();
         }
 
     }

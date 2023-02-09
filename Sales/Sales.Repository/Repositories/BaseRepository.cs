@@ -7,10 +7,10 @@ namespace Sales.Repository
 
         protected const int TamanhoPagina = 5;
 
-        protected readonly ApplicationDBContext _dBContext;
+        protected readonly ApplicationDBContext DBContext;
         public BaseRepository(ApplicationDBContext dBContext)
         {
-            _dBContext = dBContext;
+            DBContext = dBContext;
         }
     }
 }
