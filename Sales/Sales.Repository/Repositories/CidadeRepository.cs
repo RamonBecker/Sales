@@ -65,5 +65,50 @@ namespace Sales.Repository
 
             return 0;
         }
+
+        public int Atualizar(CidadeDTO model)
+        {
+
+            if(model.Id <= 0)
+            {
+                return 0;
+            }
+
+
+            var nomeDuplicado = DBContext.Cidades.Any(x => x.Ativo && x.Nome.ToUpper().Equals(model.Nome.ToUpper()) && x.Id != model.Id );
+           
+            if (nomeDuplicado)
+            {
+                return 0;
+            }
+
+
+            var entity = DBContext.Cidades.Find(model.Id);
+
+            if (entity == null)
+            {
+                return 0;
+            }
+
+
+
+            entity.Nome = model.Nome;
+            entity.Uf = model.Uf;
+            entity.Ativo = model.Ativo;
+
+            try
+            {
+                DBContext.Cidades.Update(entity);
+                DBContext.SaveChanges();
+
+                return entity.Id;
+
+            }
+            catch (Exception ex)
+            {
+            }
+
+            return 0;
+        }
     }
 }

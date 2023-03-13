@@ -26,5 +26,12 @@ namespace Sales.API
         {
             return GetService<ICidadeRepository>().Criar(model);
         }
+
+
+        [HttpPut]
+        public int Atualizar(CidadeDTO model)
+        {
+            return GetService<ICidadeRepository>().Atualizar(model);
+        }
     }
 }

@@ -7,5 +7,7 @@ namespace Sales.Interface
     {
         dynamic Get();
         int Criar(CidadeDTO model);
+
+        int Atualizar(CidadeDTO model);
     }
 }
