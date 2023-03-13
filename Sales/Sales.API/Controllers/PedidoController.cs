@@ -7,7 +7,7 @@ namespace Sales.API
     [Route("[controller]")]
     public class PedidoController : AppBaseController
     {
-        public PedidoController(IServiceProvider serviceProvider): base(serviceProvider)
+        public PedidoController(IServiceProvider serviceProvider) : base(serviceProvider)
         {
         }
 
@@ -15,16 +15,14 @@ namespace Sales.API
         [Route("ticket-max")]
         public decimal TicketMax()
         {
-            var repo = (IPedidoRepository)ServiceProvider.GetService(typeof(IPedidoRepository));
-            return repo.TicketMax();
+            return GetService<IPedidoRepository>().TicketMax();
         }
 
         [HttpGet]
         [Route("por-cliente")]
         public dynamic PedidosClientes()
         {
-            var repo = (IPedidoRepository)ServiceProvider.GetService(typeof(IPedidoRepository));
-            return repo.PedidosClientes();
+            return GetService<IPedidoRepository>().PedidosClientes();
         }
 
     }

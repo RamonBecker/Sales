@@ -18,18 +18,14 @@ namespace Sales.API
         [HttpGet]
         public dynamic Get([FromQuery] string ordem="" )
         {
-
-            var repo = (IProdutoRepository)ServiceProvider.GetService(typeof(IProdutoRepository));
-
-            return repo.Get(ordem);
+            return GetService<IProdutoRepository>().Get(ordem);
          }
 
         [HttpGet]
         [Route("search/{text}/{pagina?}")]
         public dynamic GetSearch(string text, int pagina = 1, [FromQuery] string ordem = "")
         {
-            var repo = (IProdutoRepository) ServiceProvider.GetService(typeof(IProdutoRepository));
-            return repo.Search(text, pagina, ordem);
+            return GetService<IProdutoRepository>().Search(text, pagina, ordem);
         }
 
         [HttpGet]
@@ -39,8 +35,7 @@ namespace Sales.API
 
             if ((id ?? 0) > 0)
             {
-                var repo = (IProdutoRepository)ServiceProvider.GetService(typeof(IProdutoRepository));
-                return repo.Detail(id.Value);
+                return GetService<IProdutoRepository>().Detail(id.Value);
             }
 
             return null;
@@ -53,8 +48,7 @@ namespace Sales.API
 
             if ((id ?? 0) > 0)
             {
-                var repo = (IProdutoRepository)ServiceProvider.GetService(typeof(IProdutoRepository));
-                return repo.Imagens(id.Value);
+                return GetService<IProdutoRepository>().Imagens(id.Value);
             }
 
             return null;

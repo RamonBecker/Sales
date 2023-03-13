@@ -13,5 +13,9 @@ namespace Sales.API
             ServiceProvider = serviceProvider;
         }
 
+        protected T GetService<T>()
+        {
+            return ServiceProvider.GetService<T>();
+        }
     }
 }
