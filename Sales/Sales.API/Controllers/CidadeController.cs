@@ -9,11 +9,11 @@ namespace Sales.API
     [Route("[controller]")]
     public class CidadeController : AppBaseController
     {
-        public CidadeController(IServiceProvider serviceProvider): base(serviceProvider)
+        public CidadeController(IServiceProvider serviceProvider) : base(serviceProvider)
         {
         }
 
-   
+
 
         [HttpGet]
         public dynamic Get()
@@ -32,6 +32,13 @@ namespace Sales.API
         public int Atualizar(CidadeDTO model)
         {
             return GetService<ICidadeRepository>().Atualizar(model);
+        }
+
+        [HttpDelete]
+        [Route("{id}")]
+        public bool Excluir(int id)
+        {
+            return GetService<ICidadeRepository>().Excluir(id);
         }
     }
 }

@@ -69,14 +69,14 @@ namespace Sales.Repository
         public int Atualizar(CidadeDTO model)
         {
 
-            if(model.Id <= 0)
+            if (model.Id <= 0)
             {
                 return 0;
             }
 
 
-            var nomeDuplicado = DBContext.Cidades.Any(x => x.Ativo && x.Nome.ToUpper().Equals(model.Nome.ToUpper()) && x.Id != model.Id );
-           
+            var nomeDuplicado = DBContext.Cidades.Any(x => x.Ativo && x.Nome.ToUpper().Equals(model.Nome.ToUpper()) && x.Id != model.Id);
+
             if (nomeDuplicado)
             {
                 return 0;
@@ -109,6 +109,34 @@ namespace Sales.Repository
             }
 
             return 0;
+        }
+
+        public bool Excluir(int id)
+        {
+            if (id <= 0)
+            {
+                return false;
+            }
+
+            var entity = DBContext.Cidades.Find(id);
+
+            if (entity == null)
+            {
+                return false;
+            }
+
+            try
+            {
+                DBContext.Cidades.Remove(entity);
+                DBContext.SaveChanges();
+
+                return true;
+            }
+            catch (Exception)
+            {
+            }
+
+            return false;
         }
     }
 }
