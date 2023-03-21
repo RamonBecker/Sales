@@ -63,43 +63,54 @@ namespace Sales.Repository
 
             try
             {
-                var Cliente = DBContext.Clientes.Where(x => x.Id.Equals(pedido.IdCliente)).FirstOrDefault();
-                var entity = new Pedido
+                // Transação explicita
+                using (var transaction = DBContext.Database.BeginTransaction())
                 {
-                    Numero = GetProximoNumero(),
-                    IdCliente = pedido.IdCliente,
-                    CriadoEm = DateTime.Now,
-                    Produtos = new List<ProdutoPedido>(),
-                    Cliente = DBContext.Clientes.Where(x => x.Id.Equals(pedido.IdCliente)).FirstOrDefault()
-                };
 
-                var valorTotal = 0m;
-
-
-                foreach (var produto in pedido.Produtos)
-                {
-                    var preco = DBContext.Produtos.Where(x => x.Id.Equals(produto.IdProduto)).Select(x => x.Preco).FirstOrDefault();
-
-                    if (preco > 0)
+                    try
                     {
-                        valorTotal += produto.Quantidade * preco;
-                        entity.Produtos.Add(new ProdutoPedido
+
+
+
+                        var entity = new Pedido
                         {
-                            IdProduto = produto.IdProduto,
-                            Quantidade = produto.Quantidade,
-                            Preco = preco
-                        });
+                            Numero = GetProximoNumero(),
+                            IdCliente = pedido.IdCliente,
+                            CriadoEm = DateTime.Now,
+                            Produtos = new List<ProdutoPedido>()
+                        };
+
+                        var valorTotal = 0m;
+
+
+                        foreach (var produto in pedido.Produtos)
+                        {
+                            var preco = DBContext.Produtos.Where(x => x.Id.Equals(produto.IdProduto)).Select(x => x.Preco).FirstOrDefault();
+
+                            if (preco > 0)
+                            {
+                                valorTotal += produto.Quantidade * preco;
+                                entity.Produtos.Add(new ProdutoPedido
+                                {
+                                    IdProduto = produto.IdProduto,
+                                    Quantidade = produto.Quantidade,
+                                    Preco = preco
+                                });
+                            }
+                        }
+
+                        entity.ValorTotal = valorTotal;
+                        DBContext.Pedidos.Add(entity);
+                        DBContext.SaveChanges();
+                        transaction.Commit();
+                        ret = entity.Numero;
+                    }
+                    catch (Exception)
+                    {
+                        transaction.Rollback();
+                        throw;
                     }
                 }
-
-                entity.ValorTotal = valorTotal;
-
-                DBContext.Pedidos.Add(entity);
-
-                DBContext.SaveChanges();
-
-                ret = entity.Numero;
-
             }
             catch (Exception)
             {
