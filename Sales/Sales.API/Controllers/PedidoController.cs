@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Sales.Domain;
 using Sales.Interface;
 
 namespace Sales.API
@@ -25,5 +26,11 @@ namespace Sales.API
             return GetService<IPedidoRepository>().PedidosClientes();
         }
 
+        [HttpPost]
+        [Route("")]
+        public string Salvar(PedidoDTO pedido)
+        {
+            return GetService<IPedidoRepository>().Salvar(pedido);
+        }
     }
 }

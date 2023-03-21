@@ -1,11 +1,25 @@
 ﻿
 
+using Sales.Domain;
 using Sales.Interface;
 
 namespace Sales.Repository
 {
     public class PedidoRepository : BaseRepository, IPedidoRepository
     {
+        private string GetProximoNumero()
+        {
+            var ret = 1.ToString("00000");
+
+            var ultimoNumero = DBContext.Pedidos.Max(x => x.Numero);
+
+            if (!string.IsNullOrEmpty(ultimoNumero))
+            {
+                ret = (Convert.ToInt32(ultimoNumero) + 1).ToString("00000");
+            }
+
+            return ret;
+        }
         public PedidoRepository(ApplicationDBContext dBContext) : base(dBContext)
         {
         }
@@ -32,14 +46,66 @@ namespace Sales.Repository
                    .GroupBy(
                     pedido => new { pedido.IdCliente, pedido.Cliente.Nome },
                     (chave, pedidos) => new
-                   {
-                       Cliente = chave.Nome,
-                       QtdPedidos = pedidos.Count(),
-                       Total = pedidos.Sum(p => p.ValorTotal)
+                    {
+                        Cliente = chave.Nome,
+                        QtdPedidos = pedidos.Count(),
+                        Total = pedidos.Sum(p => p.ValorTotal)
 
-                   })
+                    })
                    .ToList()
                    ;
+        }
+
+        public string Salvar(PedidoDTO pedido)
+        {
+
+            var ret = "";
+
+            try
+            {
+                var Cliente = DBContext.Clientes.Where(x => x.Id.Equals(pedido.IdCliente)).FirstOrDefault();
+                var entity = new Pedido
+                {
+                    Numero = GetProximoNumero(),
+                    IdCliente = pedido.IdCliente,
+                    CriadoEm = DateTime.Now,
+                    Produtos = new List<ProdutoPedido>(),
+                    Cliente = DBContext.Clientes.Where(x => x.Id.Equals(pedido.IdCliente)).FirstOrDefault()
+                };
+
+                var valorTotal = 0m;
+
+
+                foreach (var produto in pedido.Produtos)
+                {
+                    var preco = DBContext.Produtos.Where(x => x.Id.Equals(produto.IdProduto)).Select(x => x.Preco).FirstOrDefault();
+
+                    if (preco > 0)
+                    {
+                        valorTotal += produto.Quantidade * preco;
+                        entity.Produtos.Add(new ProdutoPedido
+                        {
+                            IdProduto = produto.IdProduto,
+                            Quantidade = produto.Quantidade,
+                            Preco = preco
+                        });
+                    }
+                }
+
+                entity.ValorTotal = valorTotal;
+
+                DBContext.Pedidos.Add(entity);
+
+                DBContext.SaveChanges();
+
+                ret = entity.Numero;
+
+            }
+            catch (Exception)
+            {
+            }
+
+            return ret;
         }
     }
 }
